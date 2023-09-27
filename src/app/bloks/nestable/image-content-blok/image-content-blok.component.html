@@ -1,0 +1,13 @@
+<div class="image-content-blok__image">
+    <img *ngIf="blok.image"
+         class="image-content-blok__img"
+         [ngSrc]="blok.image.filename"
+         [alt]="blok.image.alt"
+         [title]="blok.image.title"
+         [width]="blok.image.filename | extractImageSize : 'width'"
+         [height]="blok.image.filename | extractImageSize : 'height'">
+</div>
+
+<div *ngIf="blok.content" class="image-content-blok__content">
+    <div [innerHTML]="blok.content | richText"></div>
+</div>

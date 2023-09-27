@@ -1,0 +1,4 @@
+<article>
+    <h2 *ngIf="blok.title" [innerHTML]="blok.title"></h2>
+    <ng-container *ngFor="let slide of blok.slides" [appStoryblokRender]="slide"/>
+</article>

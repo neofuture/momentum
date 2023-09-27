@@ -1,0 +1,8 @@
+<ng-container
+        *ngFor="let child of blok.body"
+        [appStoryblokRender]="child"/>
+<h3>Slugs</h3>
+<pre>{{ slugs | json }}</pre>
+<hr>
+<h4>Http Request</h4>
+<pre>{{ json | json }}</pre>

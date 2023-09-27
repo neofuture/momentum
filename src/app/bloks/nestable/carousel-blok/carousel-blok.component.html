@@ -1,0 +1,40 @@
+<swiper-container class="carousel--container" #swiperContainer>
+    <swiper-slide *ngFor="let slide of blok.slides">
+        <ng-container [appStoryblokRender]="slide"/>
+    </swiper-slide>
+</swiper-container>
+<ul class="carousel--pagination" aria-label="Carousel navigation controls">
+    <ng-container *ngIf="blok.nextbutton">
+        <li>
+            <button
+               tabindex="0"
+               *ngIf="blok.previousbutton"
+               [disabled]="activeSlide <= 0"
+               [innerHTML]="blok.previousbutton"
+               [attr.aria-label]="blok.previousbutton"
+               (click)="setPreviousSlide()">
+            </button>
+        </li>
+    </ng-container>
+    <li *ngFor="let slide of blok.slides; let currentIndex = index"
+        tabindex="0"
+        class="carousel--pagination--item"
+        [class.carousel--pagination--item__active]="activeSlide === currentIndex"
+        [attr.aria-selected]="activeSlide === currentIndex"
+        [attr.aria-label]="'Goto slide ' + currentIndex + 1"
+        (click)="setActiveSlide(currentIndex)"
+        (keydown.enter)="setActiveSlide(currentIndex)">
+        {{ currentIndex + 1 }}
+    </li>
+    <ng-container *ngIf="blok.nextbutton">
+        <li>
+            <button
+               tabindex="0"
+               [disabled]="activeSlide >= blok.slides.length - 1"
+               [innerHTML]="blok.nextbutton"
+               [attr.aria-label]="blok.nextbutton"
+               (click)="setNextSlide()">
+            </button>
+        </li>
+    </ng-container>
+</ul>

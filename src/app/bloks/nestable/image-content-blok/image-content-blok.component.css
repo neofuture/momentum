@@ -1,0 +1,26 @@
+:host(.image-content-blok) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.image-content-blok__content,
+.image-content-blok__image {
+    flex: 1;
+}
+
+.image-content-blok__img {
+    height: auto;
+    border: 2px solid #dedede;
+}
+
+@media (min-width: 32em) {
+
+    :host(.image-content-blok) {
+        flex-direction: row;
+    }
+
+    :host(.image-content-blok--content-leading) {
+        flex-direction: row-reverse;
+    }
+}
