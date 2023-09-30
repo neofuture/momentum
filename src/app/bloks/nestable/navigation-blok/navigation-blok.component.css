@@ -1,0 +1,239 @@
+nav {
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav .wrapper {
+    position: relative;
+    max-width: 1300px;
+    width: 100%;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    white-space: nowrap;
+    flex-grow: 1;
+}
+
+.nav-links > li {
+    padding: 6px 0 6px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li a {
+    color: rgb(41, 120, 182);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-links > li:hover {
+    background: rgb(25, 35, 72);
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+.nav-links > li:hover > a {
+    color: #fff;
+}
+
+.nav-links .mobile-item {
+    display: none;
+}
+
+.nav-links li:hover .mega-box {
+    transition: all 0.3s ease;
+    top: 32px;
+    opacity: 1;
+    visibility: visible;
+    color: #333;
+}
+
+.mega-box {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    background: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index:999;
+}
+
+.mega-box .content {
+
+    border-top: 8px solid rgb(25, 35, 72);
+    padding: 20px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.mega-box .content a {
+    color: #333333;
+}
+
+.mega-box .content .row {
+    line-height: 28px;
+}
+
+.content img {
+    min-width: 100%;
+}
+
+.content .row .header {
+    color: rgb(41, 120, 182);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+
+.row li a {
+    font-size: 14px;
+    display: block;
+}
+
+.row li a:hover {
+    color: orange;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.wrapper .btn {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.wrapper .btn.close-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+@media screen and (max-width: 970px) {
+    .wrapper .btn {
+        display: block;
+    }
+
+    .wrapper .nav-links {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 350px;
+        top: 0;
+        left: -100%;
+        background: #ffffff;
+        display: block;
+        padding: 50px 10px;
+        line-height: 50px;
+        overflow-y: auto;
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+        transition: all 0.3s ease;
+    }
+
+    /* custom scroll bar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    #menu-btn:checked ~ .nav-links {
+        left: 0%;
+    }
+
+    #menu-btn:checked ~ .btn.menu-btn {
+        display: none;
+    }
+
+    .nav-links > li:hover {
+        border-radius: 5px;
+    }
+
+    .mega-box {
+        display: none;
+    }
+}
+
+nav input {
+    display: none;
+}
+
+.explore-box {
+    width: 550px;
+    background-color: rgb(41, 120, 182);
+    border-radius: 7px;
+    overflow:hidden;
+}
+
+.explore-box > div {
+    padding: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.explore-box--actions {
+    display: block;
+}
+
+.explore-box--actions a {
+    color: #fff !important;
+    font-size: 18px !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.explore-box--actions a div {
+    transition: all 0.3s;
+}
+
+.explore-box--actions a:hover div {
+    color: orange !important;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.explore-box--actions button {
+    padding: 5px 10px;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.categories-list {
+    min-width: 230px;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.brands-list {
+    min-width: 140px;
+    max-width: 220px;
+    overflow: hidden;
+}

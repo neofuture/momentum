@@ -11,7 +11,6 @@
 
 .image-content-blok__img {
     height: auto;
-    border: 2px solid #dedede;
 }
 
 @media (min-width: 32em) {

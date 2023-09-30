@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, HostBinding, Input} from "@angular/core";
 import {NgForOf, NgIf} from "@angular/common";
 import {NestableBlok, SbNestableBlok, StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {CarouselSlideBlok} from "@/bloks/nestable/carousel-slide-blok/carousel-slide-blok.interface";

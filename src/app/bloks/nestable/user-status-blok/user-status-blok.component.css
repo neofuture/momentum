@@ -1,0 +1,63 @@
+:host(.user-status) {
+    background-color: rgb(41, 120, 182);
+    color: white;
+    width: 100%;
+    padding: 7px 0 7px 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i {
+    font-size: 20px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    width: 100%;
+    padding-right: 15px;
+}
+
+.container > div:first-child {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.container > div:last-child {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.container > div:last-child > div {
+    position: relative;
+}
+
+.label {
+    font-size: 9px;
+    padding:3px;
+    color: white;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    right: -14px;
+    border-radius:5px;
+    min-width: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}

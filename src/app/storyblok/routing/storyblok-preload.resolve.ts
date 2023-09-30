@@ -1,6 +1,5 @@
-import {ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot} from "@angular/router";
+import {ResolveFn, RouterStateSnapshot} from "@angular/router";
 import {inject} from "@angular/core";
-import type {ISbStory} from "storyblok-js-client/src/interfaces";
 import {BlokComponent, STORYBLOK_MODE, StoryblokService} from "@/storyblok";
 import {StoryblokComponentService} from "@/storyblok/service/storyblok-component.service";
 

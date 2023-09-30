@@ -1,8 +1,6 @@
-import {ActivatedRoute, CanMatchFn, Route, Router, UrlSegment} from "@angular/router";
+import {CanMatchFn, Route, Router, UrlSegment} from "@angular/router";
 import {inject} from "@angular/core";
 import {STORYBLOK_MODE, STORYBLOK_PREVIEW_TOKEN, StoryblokPreviewService, StoryblokService} from "@/storyblok";
-import {toSignal} from "@angular/core/rxjs-interop";
-import {firstValueFrom} from "rxjs";
 
 export const StoryblokCanMatch: CanMatchFn = async (route: Route, segments: UrlSegment[]) => {
     const storyblokService = inject(StoryblokService);

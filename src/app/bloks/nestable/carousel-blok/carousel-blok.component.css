@@ -55,9 +55,10 @@
 button {
     background-color: red;
     border:none;
-    border-radius:8px;
+    border-radius:15px;
     color: white;
     padding: 2px 8px 4px 8px;
+    min-width: 30px;
 }
 
 button:disabled {

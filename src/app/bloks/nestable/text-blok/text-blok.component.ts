@@ -6,7 +6,7 @@ import {
     StoryblokRenderDirective,
     StoryblokRichTextPipe
 } from "@/storyblok";
-import {JsonPipe, NgForOf} from "@angular/common";
+import {JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {TextBlok} from "@/bloks/nestable/text-blok/text-blok.interface";
 
 @Component({
@@ -17,7 +17,8 @@ import {TextBlok} from "@/bloks/nestable/text-blok/text-blok.interface";
         JsonPipe,
         StoryblokRenderDirective,
         NgForOf,
-        StoryblokRichTextPipe
+        StoryblokRichTextPipe,
+        NgIf
     ],
     hostDirectives: [{
         directive: StoryblokBlokDirective,

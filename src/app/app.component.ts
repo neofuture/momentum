@@ -1,7 +1,5 @@
-import {Component, inject, signal} from '@angular/core';
-import {ActivatedRoute, RouterModule} from '@angular/router';
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-export type AppTheme = 'vm' | 'o2' | 'vm-app' | 'o2-app' | 'vmo2' | 'vmo2-app';
+import {Component} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 @Component({
     selector: 'app-root',

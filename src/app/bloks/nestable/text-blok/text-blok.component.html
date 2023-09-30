@@ -1,5 +1,4 @@
 <div>
-    <h3>{{ blok.title }}</h3>
-    <hr>
+    <h3 *ngIf="blok.title">{{ blok.title }}</h3>
     <div [innerHTML]="blok.content | richText"></div>
 </div>

@@ -1,8 +1,9 @@
-import {Component, Input} from "@angular/core";
+import {Component, inject, Input, OnInit} from "@angular/core";
 import {NestableBlok, SbNestableBlok, StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {ItemBlok} from "@/bloks/nestable/item-blok/item-blok.interface";
 import {JsonPipe, NgForOf} from "@angular/common";
 import {ActivatedRoute, RouterStateSnapshot} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'app-item-blok',
@@ -23,17 +24,20 @@ export class ItemBlokComponent implements NestableBlok<ItemBlok> {
     @Input({required: true}) blok!: SbNestableBlok<ItemBlok>;
     slugs!: string[];
     json: any;
+    private title = inject(Title);
+    comp: string | undefined;
     constructor(
         route: ActivatedRoute
     ) {
         this.slugs = route.snapshot.url.map(({path}) => path);
-        this.slugs.shift();
+        this.comp = this.slugs.shift();
 
         fetch('https://jsonplaceholder.typicode.com/todos/2')
             .then(response => response.json())
             .then(json => {
                 this.json = json;
-            })
-
+                this.title.setTitle(json.title);
+            });
     }
+
 }

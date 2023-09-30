@@ -1,6 +1,6 @@
 import {SbNestableBlok} from "@/storyblok";
 
-export interface StandardPageBlok {
+export interface ItemPageBlok {
     header: Array<SbNestableBlok>;
     body: Array<SbNestableBlok>;
 }

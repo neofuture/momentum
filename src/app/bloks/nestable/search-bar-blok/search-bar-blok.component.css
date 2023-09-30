@@ -1,0 +1,24 @@
+:host(.search-bar) {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 0 16px 0 16px;
+}
+
+.logo {
+    width: 220px;
+}
+
+.logo a img {
+    width: 100%;
+}

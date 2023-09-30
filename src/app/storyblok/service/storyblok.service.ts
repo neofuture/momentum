@@ -3,6 +3,7 @@ import {STORYBLOK_MODE, STORYBLOK_PREVIEW_TOKEN, STORYBLOK_TOKEN} from "../index
 import {apiPlugin, ISbStoriesParams, ISbStory, storyblokInit} from "@storyblok/js";
 import {ISbStoryData} from "storyblok-js-client/src/interfaces";
 import {StoryblokClient} from "@storyblok/js/dist/types/types";
+import {dynamicRoutes} from "@/storyblok/dynamic-routes.routes";
 
 type SbParams = Omit<ISbStoriesParams, 'version' | 'search_term' | 'resolve_links'>
 
@@ -10,6 +11,7 @@ type SbParams = Omit<ISbStoriesParams, 'version' | 'search_term' | 'resolve_link
     providedIn: 'root'
 })
 export class StoryblokService {
+    dynamicRoutes = dynamicRoutes;
 
     accessToken = inject(STORYBLOK_TOKEN);
     previewToken = inject(STORYBLOK_PREVIEW_TOKEN);
@@ -52,8 +54,11 @@ export class StoryblokService {
 
         const defaultParams = this.getDefaultParams();
 
-        if(slug.startsWith('item/')) {
-            slug='item';
+        for (const s of this.dynamicRoutes) {
+            if (slug.startsWith(s.slug)) {
+                slug = s.mapping;
+                break;
+            }
         }
 
         const resp = await this.client.getStory(slug || 'home', {
