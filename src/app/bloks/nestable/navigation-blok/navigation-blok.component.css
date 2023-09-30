@@ -227,8 +227,8 @@ nav input {
 }
 
 .categories-list {
-    min-width: 230px;
-    max-width: 300px;
+    min-width: 250px;
+    max-width: 250px;
     overflow: hidden;
 }
 
