@@ -37,6 +37,7 @@ export class SearchBarComponent {
     listings: any = [];
     searchLoading = false;
     searchingText = 'Searching';
+    searchCompleted = false;
     private params: Params;
     constructor(
         private httpClient: HttpClient,
@@ -51,7 +52,6 @@ export class SearchBarComponent {
     setFocus() {
         this.inputFocus = true;
         this.searchLoading = false;
-        this.searchText = '';
     }
 
     setBlur() {
@@ -91,6 +91,7 @@ export class SearchBarComponent {
                     this.httpClient.get(`${environment.api}/search?search=${searchValue}`).subscribe((data: any) => {
                         this.listings = data.data.listings;
                         this.searchLoading = false;
+                        this.searchCompleted = true;
                     });
                 } else {
                     this.listings = [];
