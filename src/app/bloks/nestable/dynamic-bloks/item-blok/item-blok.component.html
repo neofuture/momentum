@@ -3,7 +3,7 @@
         [appStoryblokRender]="child"/>
 <div *ngIf="loaded; else loading">
     <h4>Http Request</h4>
-    <pre>{{ json | json }}</pre>
+    <pre class="pre">{{ json | json }}</pre>
 </div>
 
 <ng-template #loading>
