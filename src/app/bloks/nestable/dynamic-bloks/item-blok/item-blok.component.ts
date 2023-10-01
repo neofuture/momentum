@@ -44,7 +44,7 @@ export class ItemBlokComponent implements NestableBlok<ItemBlok> {
         this.loaded = false;
         this.httpClient.get(environment.api + '/listing/' + this.slugs[0] + '?with[]=all').subscribe((data: any) => {
             this.json = data.data;
-            this.title.setTitle(data.data.title);
+            this.title.setTitle(data.data.title.replace(/&amp;/ , '&'));
             this.loaded = true;
         });
     }

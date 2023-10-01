@@ -49,7 +49,6 @@ export class CategoryBlokComponent implements NestableBlok<CategoryBlok>, OnInit
     ngOnInit(): void {
         for (const route of dynamicRoutes) {
             if (route.slug === this.slugs[0]) {
-                alert(route.title);
                 this.title.setTitle(route.title.replace(/&amp;/ , '&'));
             }
         }
