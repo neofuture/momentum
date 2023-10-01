@@ -9,7 +9,7 @@ import {
 } from "@angular/core";
 import {NestableBlok, SbNestableBlok, StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {CarouselBlok} from "@/bloks/nestable/carousel-blok/carousel-blok.interface";
-import {NgForOf, NgIf} from "@angular/common";
+import {JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {register, SwiperContainer} from 'swiper/element/bundle';
 
 register();
@@ -24,7 +24,8 @@ register();
         StoryblokBlokDirective,
         NgForOf,
         StoryblokRenderDirective,
-        NgIf
+        NgIf,
+        JsonPipe
     ],
     hostDirectives: [{
         directive: StoryblokBlokDirective,
@@ -53,10 +54,13 @@ export class CarouselBlokComponent implements NestableBlok<CarouselBlok>, AfterV
     }
 
     ngAfterViewInit(): void {
-        this.swiperContainer?.nativeElement.swiper.on('slideChange', () => {
-            if (this.swiperContainer?.nativeElement.swiper.activeIndex !== undefined) {
-                this.activeSlide = this.swiperContainer?.nativeElement.swiper.activeIndex;
-            }
-        });
+        if(this.swiperContainer?.nativeElement) {
+            this.swiperContainer?.nativeElement.swiper.on('slideChange', () => {
+                if (this.swiperContainer?.nativeElement.swiper.activeIndex !== undefined) {
+                    this.activeSlide = this.swiperContainer?.nativeElement.swiper.activeIndex;
+                }
+            });
+        }
+
     }
 }

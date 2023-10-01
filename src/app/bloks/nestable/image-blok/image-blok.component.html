@@ -1,0 +1,6 @@
+<img class='image'
+     [ngSrc]="blok.image.filename"
+     [alt]="blok.image.alt"
+     [title]="blok.image.title"
+     [width]="blok.image.filename | extractImageSize : 'width'"
+     [height]="blok.image.filename | extractImageSize : 'height'">

@@ -1,5 +1,3 @@
-<div class="section__container" [id]="blok.unique_id">
-    <ng-container
-            *ngFor="let child of blok.body"
-            [appStoryblokRender]="child"/>
-</div>
+<ng-container
+        *ngFor="let child of blok.body"
+        [appStoryblokRender]="child"/>

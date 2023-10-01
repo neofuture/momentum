@@ -1,0 +1,14 @@
+<ng-container
+        *ngFor="let child of blok.body"
+        [appStoryblokRender]="child"/>
+<div *ngIf="loaded; else loading">
+    <h4>Http Request</h4>
+    <pre>{{ json | json }}</pre>
+</div>
+
+<ng-template #loading>
+    <div class="loading">
+        <app-loading></app-loading>
+        <div>Loading</div>
+    </div>
+</ng-template>

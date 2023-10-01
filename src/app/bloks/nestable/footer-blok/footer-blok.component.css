@@ -1,0 +1,6 @@
+:host(.footer) {
+    display:flex;
+    background-color: var(--bg-blue);
+    padding: 24px 0;
+    color:var(--white);
+}

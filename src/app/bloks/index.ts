@@ -9,13 +9,18 @@ const enum BLOKS {
     NAVIGATION = 'navigation',
     USER_STATUS = 'user-status',
     SEARCH_BAR = 'search-bar',
-
+    IMAGE = 'image',
     IMAGE_CONTENT = 'image-content',
     CAROUSEL = 'carousel',
     CAROUSEL_SLIDE = 'carousel-slide',
     SECTION = 'section',
+
+    AUTOMOTIVE = 'automotive',
     ITEM = 'item',
+    CATEGORY = 'category',
+
     TEXT = 'text',
+    FOOTER = 'footer',
 }
 
 export const Bloks: StoryblokBloks = {
@@ -27,11 +32,16 @@ export const Bloks: StoryblokBloks = {
     [BLOKS.NAVIGATION]: () => import('./nestable/navigation-blok').then(m => m.NavigationBlokComponent),
     [BLOKS.USER_STATUS]: () => import('./nestable/user-status-blok').then(m => m.UserStatusBlokComponent),
     [BLOKS.SEARCH_BAR]: () => import('./nestable/search-bar-blok').then(m => m.SearchBarBlokComponent),
-
+    [BLOKS.IMAGE]: () => import('./nestable/image-blok').then(m => m.ImageBlokComponent),
     [BLOKS.IMAGE_CONTENT]: () => import('./nestable/image-content-blok').then(m => m.ImageContentBlokComponent),
     [BLOKS.CAROUSEL]: () => import('./nestable/carousel-blok').then(m => m.CarouselBlokComponent),
     [BLOKS.CAROUSEL_SLIDE]: () => import('./nestable/carousel-slide-blok').then(m => m.CarouselSlideBlokComponent),
     [BLOKS.SECTION]: () => import('./nestable/section-blok').then(m => m.SectionBlokComponent),
-    [BLOKS.ITEM]: () => import('./nestable/item-blok').then(m => m.ItemBlokComponent),
+
+    [BLOKS.AUTOMOTIVE]: () => import('./nestable/dynamic-bloks/automotive-blok/automotive-blok.component').then(m => m.AutomotiveBlokComponent),
+    [BLOKS.ITEM]: () => import('./nestable/dynamic-bloks/item-blok').then(m => m.ItemBlokComponent),
+    [BLOKS.CATEGORY]: () => import('./nestable/dynamic-bloks/category-blok').then(m => m.CategoryBlokComponent),
+
     [BLOKS.TEXT]: () => import('./nestable/text-blok').then(m => m.TextBlokComponent),
+    [BLOKS.FOOTER]: () => import('./nestable/footer-blok').then(m => m.FooterBlokComponent),
 }

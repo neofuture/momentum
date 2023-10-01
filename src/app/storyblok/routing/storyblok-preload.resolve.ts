@@ -40,5 +40,4 @@ export const StoryblokPreloadResolve: ResolveFn<Array<BlokComponent>> =
         return Promise.all(
             [...components].map((component) => storyblokComponentService.getComponent(component))
         );
-
     }

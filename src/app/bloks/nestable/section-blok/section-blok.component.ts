@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, HostBinding, Input} from "@angular/core";
 import {SectionBlok} from "@/bloks/nestable/section-blok/section-blok.interface";
 import {NestableBlok, SbNestableBlok, StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {JsonPipe, NgForOf} from "@angular/common";
@@ -20,6 +20,18 @@ import {JsonPipe, NgForOf} from "@angular/common";
 })
 export class SectionBlokComponent implements NestableBlok<SectionBlok> {
 
-    @Input({required: true}) blok!: SbNestableBlok<SectionBlok>;
+    @HostBinding('class.section__container')
+    protected readonly hbClass = true;
 
+    @HostBinding('class.section__container--row')
+    get hbClassRow(): boolean {
+        return this.blok.flexdirection === 'row';
+    }
+
+    @HostBinding('class.section__container--column')
+    get hbClassColumn(): boolean {
+        return this.blok.flexdirection === 'column';
+    }
+
+    @Input({required: true}) blok!: SbNestableBlok<SectionBlok>;
 }

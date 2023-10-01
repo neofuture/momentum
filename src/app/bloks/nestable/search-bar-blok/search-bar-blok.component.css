@@ -1,5 +1,5 @@
 :host(.search-bar) {
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,8 @@
     max-width: 1300px;
     width: 100%;
     margin-bottom: 18px;
-    padding: 0 16px 0 16px;
+    padding: 0 0 0 16px;
+    gap: 40px;
 }
 
 .logo {
@@ -21,4 +22,113 @@
 
 .logo a img {
     width: 100%;
+}
+
+.search-box {
+    width: calc(100% - 260px);
+    margin-top: 30px;
+    position: relative;
+}
+
+.search-container {
+    border: 2px solid #dddddd;
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    outline-offset: 4px;
+}
+
+.search-input {
+    width: calc(100% - 140px);
+    font-size: 16px;
+    border: none;
+    padding: 0 8px 0 8px;
+    border-right: 1px solid #b2b2b2;
+    outline: none;
+}
+
+.search-select {
+    width: 160px;
+    border: none;
+    -webkit-appearance: none;
+    margin-left: 24px;
+    outline: none;
+}
+
+.focused {
+    border: 2px solid #a6a6a6;
+    transition: all 0.5s ease-in-out;
+    outline: 2px solid orange;
+    outline-offset: 4px;
+}
+
+.search-box-results {
+    position: absolute;
+    overflow-y: scroll;
+    max-height: 0;
+    width: 100%;
+    background-color: white;
+    border: 2px solid transparent;
+    border-top: 0px solid transparent;
+    top: 42px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    z-index: 99999;
+}
+
+.visible {
+    top: 40px;
+    opacity: 1;
+    border: 2px solid #a6a6a6;
+    border-top: 0px solid transparent;
+    transition: all 0.5s ease-in-out;
+    max-height: 50vh;
+}
+
+.search-box-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4px 18px 4px;
+    gap: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.search-box-row div:nth-child(2) {
+    flex-grow: 1;
+}
+
+.search-box-row:hover {
+    background-color: #e5e5e5;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.search-box-row img {
+    width: 80px;
+    height: 80px;
+    object-fit: fill;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.loading {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nothing-found {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:8px;
 }

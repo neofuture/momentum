@@ -1,11 +1,13 @@
-<swiper-container class="carousel--container" #swiperContainer autoplay-delay="5000" keyboard-enabled="true"
-                  autoplay-disable-on-interaction="false"
->
+<swiper-container class="carousel--container"
+                  #swiperContainer
+                  autoplay-delay="{{ blok.autoplaytimer }}"
+                  keyboard-enabled="true"
+                  autoplay-disable-on-interaction="false">
     <swiper-slide *ngFor="let slide of blok.slides" lazy="true">
         <ng-container [appStoryblokRender]="slide"/>
     </swiper-slide>
 </swiper-container>
-<ul class="carousel--pagination" aria-label="Carousel navigation controls">
+<ul class="carousel--pagination" aria-label="Carousel navigation controls" *ngIf="blok.pagination">
     <ng-container *ngIf="blok.nextbutton">
         <li>
             <button

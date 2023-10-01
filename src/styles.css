@@ -3,7 +3,7 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 
 body {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Onest', sans-serif;
     min-height: unset;
 }
 
@@ -11,4 +11,22 @@ body {
 :after,
 :before {
     box-sizing: border-box
+}
+
+:root {
+    --dark-blue: #192348;
+    --bg-blue: #2978b6;
+    --orange: #f4a137;
+    --green: #9fbd47;
+    --white: #fff;
+}
+
+.footer a{
+    font-size: 14px;
+    color:var(--white);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color:var(--orange);
 }

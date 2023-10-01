@@ -3,4 +3,6 @@ export interface CarouselBlok {
     slides: [];
     nextbutton: string;
     previousbutton: string;
+    pagination: boolean;
+    autoplaytimer: number;
 }

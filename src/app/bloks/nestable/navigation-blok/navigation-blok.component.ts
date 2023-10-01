@@ -31,7 +31,7 @@ export class NavigationBlokComponent {
             if (route.position === 0) {
                 route.categories = [];
                 route.brands = [];
-                menuMap.set(route.title, {slug: route.slug, title: route.title, categories: route.categories, brands: route.brands, image: route.image});
+                menuMap.set(route.slug, {slug: route.slug, title: route.title, categories: route.categories, brands: route.brands, image: route.image});
             }
         }
 
