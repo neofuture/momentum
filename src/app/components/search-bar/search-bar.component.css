@@ -27,6 +27,7 @@
     border-right: 1px solid #b2b2b2;
     outline: none;
     background-color: transparent;
+    border-radius:0;
 }
 
 .search-select {
@@ -36,6 +37,7 @@
     margin-left: 24px;
     outline: none;
     background-color: transparent;
+    border-radius:0;
 }
 
 .focused {
