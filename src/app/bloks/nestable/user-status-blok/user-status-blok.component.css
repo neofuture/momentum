@@ -40,8 +40,8 @@ i {
 }
 
 .label {
-    font-size: 9px;
-    padding:3px;
+    font-size: 11px;
+    padding:1px;
     color: white;
     background-color: red;
     display: flex;
@@ -49,9 +49,9 @@ i {
     align-items: center;
     position: absolute;
     top: -5px;
-    right: -14px;
-    border-radius:5px;
-    min-width: 20px;
+    right: -12px;
+    border-radius:8px;
+    min-width: 18px;
 }
 
 .user-menu-sell {
