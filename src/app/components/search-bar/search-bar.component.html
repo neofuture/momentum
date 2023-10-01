@@ -12,42 +12,9 @@
                (focus)="setFocus()"
                (blur)="setBlur()"
                (keydown)="search($event)">
-        <select class="search-select" (focus)="setFocus()" (blur)="setBlur()">
-            <option selected="selected">All Categories</option>
-            <option>Antiques</option>
-            <option>Art</option>
-            <option>Automotive</option>
-            <option>Baby</option>
-            <option>Books, Comics &amp; Magazines</option>
-            <option>Business, Office &amp; Industrial</option>
-            <option>Cameras &amp; Photography</option>
-            <option>Clothes, Shoes &amp; Accessories</option>
-            <option>Coins</option>
-            <option>Collectables</option>
-            <option>Computers/Tablets &amp; Networking</option>
-            <option>Crafts</option>
-            <option>Dolls &amp; Bears</option>
-            <option>DVDs, Films &amp; TV</option>
-            <option>Events Tickets</option>
-            <option>Everything Else</option>
-            <option>Garden &amp; Patio</option>
-            <option>Health &amp; Beauty</option>
-            <option>Holidays &amp; Travel</option>
-            <option>Home, Furniture &amp; DIY</option>
-            <option>Jewellery &amp; Watches</option>
-            <option>Home, Mobile Phones &amp; Communication &amp; DIY</option>
-            <option>Music</option>
-            <option>Musical Instruments</option>
-            <option>Pet Supplies</option>
-            <option>Pottery, Porcelain &amp; Glass</option>
-            <option>Property</option>
-            <option>Sound &amp; Vision</option>
-            <option>Sporting Goods</option>
-            <option>Stamps</option>
-            <option>Toys &amp; Games</option>
-            <option>Vehicle Parts &amp; Accessories</option>
-            <option>Video Games &amp; Consoles</option>
-            <option>Wholesale &amp; Job Lots</option>
+        <select class="search-select" (focus)="setFocus()" (blur)="setBlur()" [(ngModel)]="selectedCategory">
+            <option *ngFor="let category of categories"
+                    [value]="category.value" [innerHTML]="category.label"></option>
         </select>
     </div>
     <div class="search-box-results"
