@@ -17,7 +17,7 @@ import {SearchBarComponent} from "@/components/search-bar/search-bar.component";
         inputs: ['blok']
     }],
 })
-export class SearchBarBlokComponentr {
+export class SearchBarBlokComponent {
     @HostBinding('class.search-bar')
     protected readonly hbClass = true;
 

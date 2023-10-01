@@ -7,19 +7,39 @@
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     max-width: 1300px;
     width: 100%;
-    margin-bottom: 18px;
-    padding: 0 0 0 16px;
-    gap: 40px;
+    padding: 0 16px 0 16px;
+    gap: 8px;
+}
+
+.search {
+    margin-top:0;
 }
 
 .logo {
-    width: 220px;
+    width: 120px;
 }
 
 .logo a img {
     width: 100%;
 }
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        margin-bottom: 24px;
+        gap:40px;
+    }
+    .search {
+        margin-top:22px;
+    }
+
+    .logo {
+        width: 220px;
+    }
+}
+

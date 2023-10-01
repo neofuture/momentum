@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, HostBinding} from "@angular/core";
 import {CurrencyPipe, NgForOf, NgIf} from "@angular/common";
 import {LoadingComponent} from "@/components/loading";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -24,6 +24,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 })
 
 export class SearchBarComponent {
+
+    @HostBinding('class.search-bar')
+    protected readonly hbClass = true;
+
     inputFocus: boolean = false;
     searchText: string = '';
     searchDeBounce: any;
