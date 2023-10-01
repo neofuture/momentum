@@ -1,0 +1,14 @@
+.loading {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 51vh
+}
+
+.pre {
+    width: 100%;
+    height: 46vh;
+    overflow: auto;
+}

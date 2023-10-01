@@ -56,7 +56,7 @@
             <app-loading></app-loading>
             <div>{{ searchingText }}</div>
         </div>
-        <div *ngIf="listings.length < 1 && !searchLoading" class="nothing-found">
+        <div *ngIf="searchText.length > 2 && listings.length < 1 && !searchLoading" class="nothing-found">
             <i class="fa-regular fa-face-frown"></i> Nothing Found
         </div>
         <div *ngFor="let listing of listings" class="search-box-row" (click)="selectListing(listing)">

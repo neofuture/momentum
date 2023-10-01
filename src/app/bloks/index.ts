@@ -18,6 +18,7 @@ const enum BLOKS {
     AUTOMOTIVE = 'automotive',
     ITEM = 'item',
     CATEGORY = 'category',
+    SEARCH = 'search',
 
     TEXT = 'text',
     FOOTER = 'footer',
@@ -41,6 +42,7 @@ export const Bloks: StoryblokBloks = {
     [BLOKS.AUTOMOTIVE]: () => import('./nestable/dynamic-bloks/automotive-blok/automotive-blok.component').then(m => m.AutomotiveBlokComponent),
     [BLOKS.ITEM]: () => import('./nestable/dynamic-bloks/item-blok').then(m => m.ItemBlokComponent),
     [BLOKS.CATEGORY]: () => import('./nestable/dynamic-bloks/category-blok').then(m => m.CategoryBlokComponent),
+    [BLOKS.SEARCH]: () => import('./nestable/dynamic-bloks/search-blok').then(m => m.SearchBlokComponent),
 
     [BLOKS.TEXT]: () => import('./nestable/text-blok').then(m => m.TextBlokComponent),
     [BLOKS.FOOTER]: () => import('./nestable/footer-blok').then(m => m.FooterBlokComponent),
