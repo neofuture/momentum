@@ -31,7 +31,7 @@ export class SearchBarComponent {
     protected readonly hbClass = true;
 
     categories = [
-        {value: 8, label: 'All Categories'},
+        {value: 0, label: 'All Categories'},
         {value: 20081, label: 'Antiques'},
         {value: 550, label: 'Art'},
         {value: 2, label: 'Automotive'},
@@ -79,7 +79,7 @@ export class SearchBarComponent {
     searchingText = 'Searching';
     searchCompleted = false;
     category: string = '';
-    selectedCategory: number = 8;
+    selectedCategory: number = 0;
     private params: Params;
     private searchObs: Subscription | undefined;
 
@@ -103,7 +103,6 @@ export class SearchBarComponent {
 
     setBlur() {
         this.inputFocus = false;
-        this.searchText = '';
     }
 
     search(event: any) {
@@ -115,9 +114,9 @@ export class SearchBarComponent {
 
         if (event.key === 'Enter') {
             this.listings = [];
-            let categoryName = '';
+            let categoryName = 'abc';
             for (const category of this.categories) {
-                if (category.value === this.selectedCategory) {
+                if (category.value === parseInt(String(this.selectedCategory), 10)) {
                     categoryName = category.label;
                 }
             }

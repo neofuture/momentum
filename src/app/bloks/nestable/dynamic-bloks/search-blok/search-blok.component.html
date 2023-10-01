@@ -3,7 +3,7 @@
         [appStoryblokRender]="child"/>
 <div *ngIf="loaded; else loading">
     <h4>Http Request</h4>
-    Search results for '{{ params.search }}'
+    Search results for '{{ params.search }}' in '{{ params.category }}'
     <hr>
     Params
     <pre>{{ params | json }}</pre>
