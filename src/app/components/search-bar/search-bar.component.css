@@ -28,6 +28,7 @@
     outline: none;
     background-color: transparent;
     border-radius:0;
+    -webkit-appearance: none;
 }
 
 .search-select {
@@ -39,6 +40,7 @@
     background-color: transparent;
     border-radius:0;
     font-size:12px;
+    -webkit-appearance: none;
 }
 
 .focused {
