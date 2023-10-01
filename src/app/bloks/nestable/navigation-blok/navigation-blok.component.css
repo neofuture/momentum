@@ -135,7 +135,17 @@ nav ul {
     top: 10px;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1024px) {
+    .nav-links > li {
+        padding: 8px 0 8px 0;
+    }
+    .nav-links li a {
+        font-size: 12px;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
     .wrapper .btn {
         display: block;
     }
@@ -186,11 +196,44 @@ nav input {
 }
 
 .explore-box {
-    width: 550px;
+    width: 42vw;
+    max-width: 550px;
     background-color: var(--bg-blue);
     border-radius: 7px;
     overflow:hidden;
+    height:100%;
 }
+
+.explore-box img {
+    width: 42vw;
+    max-width: 550px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*@media (max-width: 960px) {*/
+/*    .explore-box {*/
+/*        width: 450px;*/
+/*    }*/
+
+/*    .explore-box img {*/
+/*        width: 450px;*/
+/*        height: 200px;*/
+/*        object-fit: cover;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 860px) {*/
+/*    .explore-box {*/
+/*        width: 350px;*/
+/*    }*/
+
+/*    .explore-box img {*/
+/*        width: 430px;*/
+/*        height: 200px;*/
+/*        object-fit: cover;*/
+/*    }*/
+/*}*/
 
 .explore-box > div {
     padding: 20px;

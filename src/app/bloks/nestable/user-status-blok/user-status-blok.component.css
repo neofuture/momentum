@@ -54,6 +54,10 @@ i {
     min-width: 20px;
 }
 
+.user-menu-sell {
+    display:none;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -63,7 +67,8 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .container {
+    .user-menu-sell {
+        display: initial;
     }
     .user-quicksell{
         display:none !important;
