@@ -12,8 +12,9 @@
     align-items: center;
     max-width: 1300px;
     width: 100%;
-    padding: 0 16px 0 16px;
+    padding: 0 8px 0 8px;
     gap: 8px;
+    margin-bottom: 12px;
 }
 
 .search {
@@ -31,8 +32,9 @@
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
-        margin-bottom: 24px;
+        padding: 0 16px 0 16px;
         gap:40px;
+        margin-bottom: 24px;
     }
     .search {
         margin-top:22px;

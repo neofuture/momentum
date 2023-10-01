@@ -21,7 +21,7 @@
 
 .search-input {
     width: calc(100% - 140px);
-    font-size: 16px;
+    font-size: 12px;
     border: none;
     padding: 0 8px 0 8px;
     border-right: 1px solid #b2b2b2;
@@ -34,10 +34,11 @@
     width: 160px;
     border: none;
     -webkit-appearance: none;
-    margin-left: 24px;
+    margin-left: 8px;
     outline: none;
     background-color: transparent;
     border-radius:0;
+    font-size:12px;
 }
 
 .focused {
@@ -114,4 +115,14 @@
     justify-content: center;
     align-items: center;
     gap:8px;
+}
+
+@media (min-width: 768px) {
+    .search-input {
+        font-size:16px;
+    }
+    .search-select {
+        margin-left: 24px;
+        font-size:16px;
+    }
 }
