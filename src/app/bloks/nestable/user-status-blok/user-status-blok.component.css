@@ -2,7 +2,7 @@
     background-color: rgb(41, 120, 182);
     color: white;
     width: 100%;
-    padding: 7px 0 7px 0;
+    padding: 7px 4px 7px 4px;
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@ i {
 
 .container > div:last-child {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     justify-content: center;
     align-items: baseline;
 }
@@ -60,4 +60,17 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+    }
+    .user-quicksell{
+        display:none !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .icons {
+
+    }
 }
