@@ -38,7 +38,7 @@ export const dynamicRoutes = [
     {menu: 'collectables', position: 0, slug: 'collectables', title: 'Collectables', mapping: 'category-page', categories: [], brands: [], image: '/assets/images/Collectables.png'},
     {menu: 'collectables', position: 1, slug: 'keyrings', title: 'Keyrings', mapping: 'category-page'},
     {menu: 'collectables', position: 1, slug: 'memorabilia', title: 'Memorabilia', mapping: 'category-page'},
-    {menu: 'collectables', position: 1, slug: 'kitchen-alia', title: 'Kitchen-alia', mapping: 'category-page'},
+    {menu: 'collectables', position: 1, slug: 'kitchenalia', title: 'Kitchenalia', mapping: 'category-page'},
     {menu: 'collectables', position: 1, slug: 'ornaments', title: 'Ornaments', mapping: 'category-page'},
     {menu: 'collectables', position: 1, slug: 'animal-collectables', title: 'Animal Collectables', mapping: 'category-page'},
     {menu: 'collectables', position: 1, slug: 'paper-and-ephemera', title: 'Paper and Ephemera', mapping: 'category-page'},

@@ -52,7 +52,7 @@ export class SearchBlokComponent  implements NestableBlok<SearchBlok>, OnInit {
                 this.loadingText = 'Please wait. Still loading';
             }, 8000);
             this.httpClient.get(environment.api + `/search?active_listings=1&cat_id=${this.params.cat_id}&category=${this.params.category}&page=1&results_per_page=20&search=` + this.params.search).subscribe((data: any) => {
-                this.json = data.data;
+                this.json = data.data.listings;
                 this.loaded = true;
             });
         }

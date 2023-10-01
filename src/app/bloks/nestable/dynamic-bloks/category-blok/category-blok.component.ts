@@ -49,7 +49,7 @@ export class CategoryBlokComponent implements NestableBlok<CategoryBlok>, OnInit
             this.loadingText = 'Please wait. Still loading';
         }, 8000);
         this.httpClient.get(environment.api + '/search?stored_search=' + this.slugs[0]).subscribe((data: any) => {
-            this.json = data.data;
+            this.json = data.data.listings;
             this.loaded = true;
         });
     }
