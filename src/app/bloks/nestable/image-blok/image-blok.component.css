@@ -1,4 +1,28 @@
 img {
+    height: var(--height);
     width: 100%;
-    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    img {
+        height: calc(var(--height) * 0.6);
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        height: calc(var(--height) * 0.5);
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        height: calc(var(--height) * 0.3);
+    }
+}
+@media (max-width: 400px) {
+    img {
+        height: calc(var(--height) * 0.2);
+    }
 }

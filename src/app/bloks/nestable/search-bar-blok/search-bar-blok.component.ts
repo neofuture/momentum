@@ -1,6 +1,5 @@
-import {Component, HostBinding, OnInit} from "@angular/core";
-import {NestableBlok, SbNestableBlok, StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
-import {SearchBarBlok} from "@/bloks/nestable/search-bar-blok/search-bar-blok.interface";
+import {Component, HostBinding} from "@angular/core";
+import {StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {SearchBarComponent} from "@/components/search-bar/search-bar.component";
 
 @Component({
@@ -20,5 +19,4 @@ import {SearchBarComponent} from "@/components/search-bar/search-bar.component";
 export class SearchBarBlokComponent {
     @HostBinding('class.search-bar')
     protected readonly hbClass = true;
-
 }

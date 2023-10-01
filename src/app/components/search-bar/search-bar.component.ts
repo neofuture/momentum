@@ -33,6 +33,7 @@ export class SearchBarComponent {
     searchDeBounce: any;
     listings: any = [];
     searchLoading = false;
+    searchingText = 'Searching';
     constructor(
         private httpClient: HttpClient
     ) {
@@ -65,6 +66,13 @@ export class SearchBarComponent {
                 let searchValue = event.target.value;
                 this.searchLoading = true;
                 this.listings = [];
+                this.searchingText = 'Searching';
+                setTimeout(() => {
+                    this.searchingText = 'Still searching';
+                }, 3000);
+                setTimeout(() => {
+                    this.searchingText = 'Please wait. Still searching';
+                }, 8000);
                 if (searchValue.length > 2) {
                     this.searchLoading = true;
                     this.httpClient.get(`${environment.api}/search?search=${searchValue}`).subscribe((data: any) => {

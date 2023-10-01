@@ -54,7 +54,7 @@
          [class.visible]="(searchText.length > 2 || searchLoading) && inputFocus">
         <div *ngIf="searchLoading" class="loading">
             <app-loading></app-loading>
-            <div>Searching</div>
+            <div>{{ searchingText }}</div>
         </div>
         <div *ngIf="listings.length < 1 && !searchLoading" class="nothing-found">
             <i class="fa-regular fa-face-frown"></i> Nothing Found

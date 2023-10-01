@@ -1,6 +1,6 @@
 import {Component, HostBinding, Input} from "@angular/core";
 import {ContentTypeBlok, SbContentTypeBlok, StoryblokRenderDirective} from "@/storyblok";
-import {JsonPipe, NgForOf} from "@angular/common";
+import {NgForOf} from "@angular/common";
 import {CategoryPageBlok} from "@/bloks/content-types/category-page/category-page.interface";
 
 @Component({
@@ -8,7 +8,6 @@ import {CategoryPageBlok} from "@/bloks/content-types/category-page/category-pag
     templateUrl: './category-page.component.html',
     styleUrls: ['./category-page.component.css'],
     imports: [
-        JsonPipe,
         NgForOf,
         StoryblokRenderDirective
     ],

@@ -35,12 +35,20 @@ export class AutomotiveBlokComponent implements NestableBlok<AutomotiveBlok>, On
     private title = inject(Title);
     comp: string | undefined;
     loaded = false;
+    loadingText = 'Loading';
     constructor(
         route: ActivatedRoute,
         private httpClient: HttpClient
     ) {
         this.slugs = route.snapshot.url.map(({path}) => path);
         this.loaded = false;
+        this.loadingText = 'Loading';
+        setTimeout(() => {
+            this.loadingText = 'Still loading';
+        }, 3000);
+        setTimeout(() => {
+            this.loadingText = 'Please wait. Still loading';
+        }, 8000);
         this.httpClient.get(environment.api + '/search?stored_search=' + this.slugs[0]).subscribe((data: any) => {
             this.json = data.data;
             this.loaded = true;

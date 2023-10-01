@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {JsonPipe, NgForOf, NgIf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {dynamicRoutes} from "@/storyblok/dynamic-routes.routes";
 import {dynamicRoutesModel} from "@/storyblok/dynamic-routes.interface";
@@ -10,7 +10,6 @@ import {dynamicRoutesModel} from "@/storyblok/dynamic-routes.interface";
     styleUrls: ['./navigation-blok.component.css'],
     standalone: true,
     imports: [
-        JsonPipe,
         StoryblokRenderDirective,
         NgForOf,
         NgIf
@@ -21,7 +20,6 @@ import {dynamicRoutesModel} from "@/storyblok/dynamic-routes.interface";
     }],
 })
 export class NavigationBlokComponent {
-    dynamicRoutes = dynamicRoutes as dynamicRoutesModel[];
     megaMenu: any = [];
 
     constructor() {

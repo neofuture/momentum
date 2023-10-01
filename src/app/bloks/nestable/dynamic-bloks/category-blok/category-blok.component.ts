@@ -14,12 +14,12 @@ import {dynamicRoutes} from "@/storyblok/dynamic-routes.routes";
     templateUrl: './category-blok.component.html',
     styleUrls: ['./category-blok.component.css'],
     imports: [
-        JsonPipe,
         StoryblokRenderDirective,
         NgForOf,
         HttpClientModule,
         LoadingComponent,
-        NgIf
+        NgIf,
+        JsonPipe
     ],
     hostDirectives: [{
         directive: StoryblokBlokDirective,
@@ -34,12 +34,20 @@ export class CategoryBlokComponent implements NestableBlok<CategoryBlok>, OnInit
     private title = inject(Title);
     comp: string | undefined;
     loaded = false;
+    loadingText = 'Loading';
     constructor(
         route: ActivatedRoute,
         private httpClient: HttpClient
     ) {
         this.slugs = route.snapshot.url.map(({path}) => path);
         this.loaded = false;
+        this.loadingText = 'Loading';
+        setTimeout(() => {
+            this.loadingText = 'Still loading';
+        }, 3000);
+        setTimeout(() => {
+            this.loadingText = 'Please wait. Still loading';
+        }, 8000);
         this.httpClient.get(environment.api + '/search?stored_search=' + this.slugs[0]).subscribe((data: any) => {
             this.json = data.data;
             this.loaded = true;

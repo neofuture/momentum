@@ -1,3 +1,4 @@
-<ng-container
-        *ngFor="let child of blok.body"
+<div *ngFor="let child of blok.body" class="item">
+       <ng-container
         [appStoryblokRender]="child"/>
+</div>

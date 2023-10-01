@@ -19,19 +19,11 @@ import {JsonPipe, NgForOf} from "@angular/common";
     standalone: true
 })
 export class SectionBlokComponent implements NestableBlok<SectionBlok> {
-
     @HostBinding('class.section__container')
     protected readonly hbClass = true;
-
     @HostBinding('class.section__container--row')
     get hbClassRow(): boolean {
         return this.blok.flexdirection === 'row';
     }
-
-    @HostBinding('class.section__container--column')
-    get hbClassColumn(): boolean {
-        return this.blok.flexdirection === 'column';
-    }
-
     @Input({required: true}) blok!: SbNestableBlok<SectionBlok>;
 }

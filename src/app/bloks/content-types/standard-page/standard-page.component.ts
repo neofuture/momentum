@@ -1,7 +1,7 @@
 import {Component, HostBinding, inject, Input, OnInit} from "@angular/core";
 import {ContentTypeBlok, SbContentTypeBlok, StoryblokRenderDirective} from "@/storyblok";
 import {StandardPageBlok} from "@/bloks/content-types/standard-page/standard-page.interface";
-import {JsonPipe, NgForOf} from "@angular/common";
+import {NgForOf} from "@angular/common";
 import {Title} from "@angular/platform-browser";
 
 @Component({
@@ -9,7 +9,6 @@ import {Title} from "@angular/platform-browser";
     templateUrl: './standard-page.component.html',
     styleUrls: ['./standard-page.component.css'],
     imports: [
-        JsonPipe,
         NgForOf,
         StoryblokRenderDirective
     ],
@@ -24,5 +23,4 @@ export class StandardPageComponent implements ContentTypeBlok<StandardPageBlok>,
     ngOnInit() {
         this.title.setTitle(this.blok.name);
     }
-
 }

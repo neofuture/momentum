@@ -9,12 +9,10 @@ import {
 } from "@angular/core";
 import {NestableBlok, SbNestableBlok, StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {CarouselBlok} from "@/bloks/nestable/carousel-blok/carousel-blok.interface";
-import {JsonPipe, NgForOf, NgIf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {register, SwiperContainer} from 'swiper/element/bundle';
 
 register();
-
-
 @Component({
     selector: 'app-carousel-blok',
     templateUrl: './carousel-blok.component.html',
@@ -24,8 +22,7 @@ register();
         StoryblokBlokDirective,
         NgForOf,
         StoryblokRenderDirective,
-        NgIf,
-        JsonPipe
+        NgIf
     ],
     hostDirectives: [{
         directive: StoryblokBlokDirective,

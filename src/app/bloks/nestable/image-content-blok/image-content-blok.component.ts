@@ -33,11 +33,9 @@ import {ExtractImageSizePipe} from "@/storyblok/pipes/extract-image-size.pipe";
 export class ImageContentBlokComponent implements NestableBlok<ImageContentBlok> {
     @HostBinding('class.image-content-blok')
     protected readonly hbClass = true;
-
     @HostBinding('class.image-content-blok--content-leading')
     get hbClassContentLeading(): boolean {
         return this.blok.direction === 'content-leading';
     }
-
     @Input({required: true}) blok!: SbNestableBlok<ImageContentBlok>;
 }

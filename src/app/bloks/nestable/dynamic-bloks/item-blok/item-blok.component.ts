@@ -19,7 +19,8 @@ import {dynamicRoutes} from "@/storyblok/dynamic-routes.routes";
         NgForOf,
         HttpClientModule,
         NgIf,
-        LoadingComponent
+        LoadingComponent,
+        JsonPipe
     ],
     hostDirectives: [{
         directive: StoryblokBlokDirective,
@@ -34,7 +35,7 @@ export class ItemBlokComponent implements NestableBlok<ItemBlok> {
     private title = inject(Title);
     comp: string | undefined;
     loaded = false;
-
+    loadingText = 'Loading';
     constructor(
         route: ActivatedRoute,
         private httpClient: HttpClient
@@ -42,11 +43,17 @@ export class ItemBlokComponent implements NestableBlok<ItemBlok> {
         this.slugs = route.snapshot.url.map(({path}) => path);
         this.comp = this.slugs.shift();
         this.loaded = false;
+        this.loadingText = 'Loading';
+        setTimeout(() => {
+            this.loadingText = 'Still loading';
+        }, 3000);
+        setTimeout(() => {
+            this.loadingText = 'Please wait. Still loading';
+        }, 8000);
         this.httpClient.get(environment.api + '/listing/' + this.slugs[0] + '?with[]=all').subscribe((data: any) => {
             this.json = data.data;
             this.title.setTitle(data.data.title.replace(/&amp;/ , '&'));
             this.loaded = true;
         });
     }
-
 }

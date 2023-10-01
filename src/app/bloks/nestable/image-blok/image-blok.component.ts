@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {SbNestableBlok, StoryblokBlokDirective} from "@/storyblok";
-import {JsonPipe, NgIf, NgOptimizedImage} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 import {ImageBlok} from "@/bloks/nestable/image-blok/image-blok.interface";
 import {ExtractImageSizePipe} from "@/storyblok/pipes/extract-image-size.pipe";
 
@@ -17,12 +17,9 @@ import {ExtractImageSizePipe} from "@/storyblok/pipes/extract-image-size.pipe";
         imports: [
             ExtractImageSizePipe,
             NgOptimizedImage,
-            NgIf,
-            JsonPipe
+            NgIf
         ],
     })
 export class ImageBlokComponent {
     @Input({required: true}) blok!: SbNestableBlok<ImageBlok>;
-    constructor() {
-    }
 }
