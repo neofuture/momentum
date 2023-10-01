@@ -4,7 +4,7 @@
         <input type="radio" name="slider" id="close-btn">
         <ul class="nav-links">
             <label for="close-btn" class="btn close-btn"><i class="fa fa-close"></i></label>
-            <li *ngFor="let menu of megaMenu">
+            <li *ngFor="let menu of megaMenu" (mouseenter)="setMenuOpen()" (mouseleave)="setMenuClosed()">
                 <a href="{{menu.slug}}" class="desktop-item" [innerHTML]="menu.title"></a>
                 <input type="checkbox" id="showMega">
                 <label for="showMega" class="mobile-item">Mega Menu</label>

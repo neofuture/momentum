@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {NgForOf, NgIf} from "@angular/common";
+import {Component, EventEmitter, Output} from "@angular/core";
+import {JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {StoryblokBlokDirective, StoryblokRenderDirective} from "@/storyblok";
 import {dynamicRoutes} from "@/storyblok/dynamic-routes.routes";
 import {dynamicRoutesModel} from "@/storyblok/dynamic-routes.interface";
@@ -12,7 +12,8 @@ import {dynamicRoutesModel} from "@/storyblok/dynamic-routes.interface";
     imports: [
         StoryblokRenderDirective,
         NgForOf,
-        NgIf
+        NgIf,
+        JsonPipe
     ],
     hostDirectives: [{
         directive: StoryblokBlokDirective,
@@ -21,7 +22,7 @@ import {dynamicRoutesModel} from "@/storyblok/dynamic-routes.interface";
 })
 export class NavigationBlokComponent {
     megaMenu: any = [];
-
+    focusState = false;
     constructor() {
         const menuMap = new Map();
 
@@ -42,5 +43,13 @@ export class NavigationBlokComponent {
         }
 
         this.megaMenu = Array.from(menuMap.values());
+    }
+
+    setMenuOpen() {
+        this.focusState = true;
+    }
+
+    setMenuClosed() {
+        this.focusState = false;
     }
 }
