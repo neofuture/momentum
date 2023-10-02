@@ -1,5 +1,5 @@
 [build]
-  command = "nx run prerender"
+  command = "nx run new-build"
   functions = "./functions"
   publish = "dist/momentum/browser"
 
