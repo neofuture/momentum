@@ -51,7 +51,7 @@ export class CarouselBlokComponent implements NestableBlok<CarouselBlok>, AfterV
     }
 
     ngAfterViewInit(): void {
-        if(this.swiperContainer?.nativeElement) {
+        if(this.swiperContainer?.nativeElement.swiper) {
             this.swiperContainer?.nativeElement.swiper.on('slideChange', () => {
                 if (this.swiperContainer?.nativeElement.swiper.activeIndex !== undefined) {
                     this.activeSlide = this.swiperContainer?.nativeElement.swiper.activeIndex;
