@@ -236,7 +236,6 @@
           "/",
           "/sell",
           "/item",
-          "/item/**/*",
           "/sub-item",
           "/automotive",
           "/cars",

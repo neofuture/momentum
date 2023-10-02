@@ -3,4 +3,7 @@
   functions = "./functions"
   publish = "dist/momentum/browser"
 
-
+[[redirects]]
+  from = "/item/*"
+  to = "/item/index.html"
+  status = 200
