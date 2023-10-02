@@ -54,12 +54,12 @@ export class StoryblokService {
 
         const defaultParams = this.getDefaultParams();
 
-        for (const s of this.dynamicRoutes) {
-            if (slug.startsWith(s.slug)) {
-                slug = s.mapping;
-                break;
-            }
-        }
+        // for (const s of this.dynamicRoutes) {
+        //     if (slug.startsWith(s.slug)) {
+        //         slug = s.mapping;
+        //         break;
+        //     }
+        // }
 
         const resp = await this.client.getStory(slug || 'home', {
             resolve_links: 'url',
