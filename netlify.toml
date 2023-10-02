@@ -1,10 +1,6 @@
 [build]
-  command = "nx run new-build"
+  command = "nx run build-ssr"
   functions = "./functions"
   publish = "dist/momentum/browser"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
