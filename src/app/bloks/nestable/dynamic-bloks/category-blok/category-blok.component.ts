@@ -8,8 +8,6 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {environment} from "../../../../../environments/environment";
 import {LoadingComponent} from "@/components/loading";
 import {dynamicRoutes} from "@/storyblok/dynamic-routes.routes";
-import { PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser} from '@angular/common';
 
 @Component({
     selector: 'app-category-blok',
@@ -39,24 +37,21 @@ export class CategoryBlokComponent implements NestableBlok<CategoryBlok>, OnInit
     loadingText = 'Loading';
     constructor(
         route: ActivatedRoute,
-        private httpClient: HttpClient,
-        @Inject(PLATFORM_ID) platformId: string
+        private httpClient: HttpClient
     ) {
-        if(isPlatformBrowser(platformId)) {
-            this.slugs = route.snapshot.url.map(({path}) => path);
-            this.loaded = false;
-            this.loadingText = 'Loading';
-            setTimeout(() => {
-                this.loadingText = 'Still loading';
-            }, 3000);
-            setTimeout(() => {
-                this.loadingText = 'Please wait. Still loading';
-            }, 8000);
-            this.httpClient.get(environment.api + '/search?stored_search=' + this.slugs[0]).subscribe((data: any) => {
-                this.json = data.data.listings;
-                this.loaded = true;
-            });
-        }
+        this.slugs = route.snapshot.url.map(({path}) => path);
+        this.loaded = false;
+        this.loadingText = 'Loading';
+        setTimeout(() => {
+            this.loadingText = 'Still loading';
+        }, 3000);
+        setTimeout(() => {
+            this.loadingText = 'Please wait. Still loading';
+        }, 8000);
+        this.httpClient.get(environment.api + '/search?stored_search=' + this.slugs[0]).subscribe((data: any) => {
+            this.json = data.data.listings;
+            this.loaded = true;
+        });
     }
 
     ngOnInit(): void {
