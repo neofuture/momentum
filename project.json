@@ -170,7 +170,40 @@
       },
       "configurations": {
         "production": {
-          "outputHashing": "media"
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "src": "./src/environments/environment.ts",
+              "replaceWith": "./src/environments/environment.production.ts"
+            }
+          ]
+        },
+        "stage": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "src": "./src/environments/environment.ts",
+              "replaceWith": "./src/environments/environment.stage.ts"
+            }
+          ]
+        },
+        "int": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "src": "./src/environments/environment.ts",
+              "replaceWith": "./src/environments/environment.int.ts"
+            }
+          ]
+        },
+        "review": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "src": "./src/environments/environment.ts",
+              "replaceWith": "./src/environments/environment.review.ts"
+            }
+          ]
         },
         "development": {
           "buildOptimizer": false,
@@ -199,7 +232,13 @@
     "prerender": {
       "executor": "@nguniversal/builders:prerender",
       "options": {
-        "routes": ["/"]
+        "routes": [
+          "/",
+          "/sell",
+          "/item",
+          "/item/:id",
+          "/item/:id/:slug"
+        ]
       },
       "configurations": {
         "development": {

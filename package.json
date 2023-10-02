@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "ssr": "nx serve-ssr",
-    "new-build": "nx build; nx run prerender",
+    "build-ssr": "nx build; nx run prerender",
     "server": "nx server",
     "test": "nx test",
     "ssl": "local-ssl-proxy --source 3001 --target 4200 --cert localhost.pem --key localhost-key.pem"
